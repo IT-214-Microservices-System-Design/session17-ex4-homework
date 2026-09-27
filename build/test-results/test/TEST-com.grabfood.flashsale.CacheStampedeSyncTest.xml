@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.grabfood.flashsale.CacheStampedeSyncTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-27T11:23:16.435Z" hostname="UNKNOW-DEVICE" time="20.337">
+  <properties/>
+  <testcase name="Kiểm thử 50 luồng đồng thời: Với sync = true, chỉ DUY NHẤT 1 lần truy vấn CSDL xảy ra" classname="com.grabfood.flashsale.CacheStampedeSyncTest" time="3.996"/>
+  <system-out><![CDATA[18:23:16.741 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.grabfood.flashsale.CacheStampedeSyncTest]: CacheStampedeSyncTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:23:17.111 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.grabfood.flashsale.CacheStampedePreventionApplication for test class com.grabfood.flashsale.CacheStampedeSyncTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-09-27T18:23:18.388+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] c.g.flashsale.CacheStampedeSyncTest      : Starting CacheStampedeSyncTest using Java 17.0.18 with PID 15120 (started by DELL in D:\PTIT2024B_EXCERCISE_Rikkei\Microservice_Architecture\ss17\ex4)
+2026-09-27T18:23:18.398+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] c.g.flashsale.CacheStampedeSyncTest      : No active profile set, falling back to 1 default profile: "default"
+2026-09-27T18:23:20.797+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-27T18:23:20.801+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27T18:23:21.082+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 1 JPA repository interface.
+2026-09-27T18:23:21.126+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-27T18:23:21.128+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-27T18:23:21.165+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.grabfood.flashsale.repository.FlashSaleProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-09-27T18:23:21.166+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2026-09-27T18:23:22.578+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-27T18:23:22.747+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-09-27T18:23:22.852+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-27T18:23:23.785+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27T18:23:23.889+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-27T18:23:24.284+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:flashsaledb user=SA
+2026-09-27T18:23:24.288+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-27T18:23:24.435+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27T18:23:26.705+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27T18:23:26.858+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:23:29.215+07:00  WARN 15120 --- [cache-stampede-prevention-service] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27T18:23:32.704+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] c.g.flashsale.CacheStampedeSyncTest      : Started CacheStampedeSyncTest in 15.22 seconds (process running for 17.712)
+2026-09-27T18:23:34.268+07:00  INFO 15120 --- [cache-stampede-prevention-service] [    Test worker] c.g.flashsale.service.FlashSaleService   : >>> ?ã xóa s?ch cache 'flash-sale' và reset b? ??m DB Query
+2026-09-27T18:23:34.467+07:00  INFO 15120 --- [cache-stampede-prevention-service] [ool-3-thread-28] c.g.flashsale.service.FlashSaleService   : Fetching from Database for product 1
+>>> KI?M TH? THÀNH CÔNG: 50 requests hoàn t?t trong 2448ms v?i duy nh?t 1 l?n truy v?n DB.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
